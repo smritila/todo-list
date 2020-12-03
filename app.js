@@ -6,7 +6,7 @@ function handleSubmitForm(e){
   let input=document.querySelector('input');
   if(input.value != '')
    addTodo (input.value);
-   input.value=';'
+   input.value='';
 }    
 
 // Helpers
@@ -14,4 +14,13 @@ function handleSubmitForm(e){
     let ul=document.querySelector('ul');
     let li=document.createElement('li');
 
+    li.innerHTML= `
+        <span class="todo-item">${todo}</span>
+        <button name="checkButton"><i class="fa fa-check-square"></i></button>
+        <button name="deleteButton"><i class="fa fa-trash"></i></button>
+
+    `;
+     li.classList.add('todo-list-item');
+     ul.appendChild(li);
+      
  }
